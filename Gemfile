@@ -1,31 +1,24 @@
 source "http://rubygems.org"
-# Add dependencies required to use your gem here.
-# Example:
-#   gem "activesupport", ">= 2.3.5"
 
 platforms :jruby do
-  gem "atomic", ">=0"
-  gem "i18n", ">= 0.6.1"
-  gem "activesupport", ">= 3.2.13"
-  gem "rake"
-  gem "bio", ">= 1.4.2"
-  gem "jbundler", "0.4.3"
-  gem "ruport"
-  gem "json"
-  gem "multi_json"
-  gem "gherkin"
-  gem "git"
-  gem "shoulda", ">= 0"
-  gem "test-unit", ">= 0"
-  gem "rdoc", ">= 3.12"
-  gem "bundler", ">= 1.3.5"
-  gem "jeweler", "~> 1.8.4"
-  gem "simplecov", ">= 0"
-  gem "cucumber"
-  gem "rspec"
-end
+  gem "atomic", "~> 1.1"
+  gem "activesupport", "~> 4.1"
+  gem "bio", "~> 1.4"
+  gem "ruport", "~> 1.6"
+  gem "lock_jar", "~> 0.10"
 
-# Add dependencies to develop your gem here.
-# Include everything needed to run rake, tests, features, etc.
-#group :development do
-#end
+  group :development do
+    gem "git", "~> 1.2"
+    gem "rdoc", "~> 4.1"
+    gem "jeweler", "~> 2.0"
+    gem "rake", "~> 10.3"
+  end
+
+  group :test do
+    gem "shoulda", "~> 3.5"
+    gem "test-unit", "~> 2.5"
+    gem "simplecov", "~> 0.8"
+    gem "cucumber", "~> 1.3"
+    gem "rspec", "~> 3.0"
+  end
+end

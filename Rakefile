@@ -1,10 +1,8 @@
 # encoding: utf-8
 
-require 'rubygems'
-require 'bundler'
+require "bundler/gem_tasks"
 
 task :default => :prepare
-task :install => :prepare
 
 task :prepare do
   require 'lock_jar'
@@ -13,30 +11,7 @@ task :prepare do
   LockJar.install('Jarfile.lock', local_repo: File.expand_path("../jars", __FILE__))
 end
 
-begin
-  Bundler.setup(:default, :development, :test)
-rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts "Run `jruby -S bundle install` to install missing gems"
-  exit e.status_code
-end
-
 require 'rake'
-require 'jeweler'
-
-Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "ruby-band"
-  gem.homepage = "http://github.com/arrigonialberto86/ruby-band"
-  gem.license = "MIT"
-  gem.summary = %Q{Data mining algorithms for JRuby}
-  gem.description = %Q{Data mining and machine learning algorithms for JRuby}
-  gem.email = "arrigonialberto86@gmail.com"
-  gem.authors = ["arrigonialberto86"]
-  # dependencies defined in Gemfile
-end
-Jeweler::RubygemsDotOrgTasks.new
-
 require 'cucumber'
 require 'cucumber/rake/task'
 
@@ -66,8 +41,6 @@ end
 #  test.verbose = true
 #  test.rcov_opts << '--exclude "gems/*"'
 #end
-
-task :default => :test
 
 require 'rdoc/task'
 

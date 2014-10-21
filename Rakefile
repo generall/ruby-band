@@ -3,6 +3,7 @@
 require "bundler/gem_tasks"
 
 task :default => :prepare
+task :install => :prepare
 
 task :prepare do
   require 'lock_jar'

@@ -17,7 +17,7 @@ platforms :jruby do
   group :test do
     gem "shoulda", "~> 3.5"
     gem "test-unit", "~> 2.5"
-    gem "simplecov", "~> 0.8"
+    gem "simplecov", "~> 0.9"
     gem "cucumber", "~> 1.3"
     gem "rspec", "~> 3.0"
   end

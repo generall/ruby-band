@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.description      = "Data mining and machine learning algorithms for JRuby"
   spec.summary          = "Data mining and machine learning algorithms for JRuby"
   spec.email            = "arrigonialberto86@gmail.com"
-  spec.executables      = ["ruby-band"]
   spec.extensions       = ["Rakefile"]
   spec.extra_rdoc_files = ["LICENSE.txt", "README.md", "README.rdoc"]
   spec.files            = `git ls-files -z`.split("\x0") + Dir['jars/**/*']

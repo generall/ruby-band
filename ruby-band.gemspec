@@ -3,7 +3,6 @@
 # Instead, edit Jeweler::Tasks in Rakefile, and run 'rake gemspec'
 # -*- encoding: utf-8 -*-
 # stub: ruby-band 0.1.13 ruby lib
-# stub: ext/mkrf_conf.rb
 
 Gem::Specification.new do |s|
   s.name = "ruby-band"
@@ -12,11 +11,10 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["arrigonialberto86"]
-  s.date = "2014-07-16"
+  s.date = "2014-10-21"
   s.description = "Data mining and machine learning algorithms for JRuby"
   s.email = "arrigonialberto86@gmail.com"
   s.executables = ["ruby-band"]
-  s.extensions = ["ext/mkrf_conf.rb"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md",
@@ -43,7 +41,6 @@ Gem::Specification.new do |s|
     "band_server/uploads/second_dataset.csv",
     "band_server/uploads/third_dataset.csv",
     "bin/ruby-band",
-    "ext/mkrf_conf.rb",
     "features/create_dataset.feature",
     "features/step_definitions/create_dataset.rb",
     "features/step_definitions/weka_classifiers.rb",
@@ -111,7 +108,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/arrigonialberto86/ruby-band"
   s.licenses = ["MIT"]
-  s.rubygems_version = "2.2.2"
+  s.rubygems_version = "2.4.2"
   s.summary = "Data mining algorithms for JRuby"
 
   if s.respond_to? :specification_version then

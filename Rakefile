@@ -33,7 +33,6 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Data mining and machine learning algorithms for JRuby}
   gem.email = "arrigonialberto86@gmail.com"
   gem.authors = ["arrigonialberto86"]
-  gem.extensions = ["ext/mkrf_conf.rb"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

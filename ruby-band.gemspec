@@ -32,6 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "test-unit", "~> 2.5"
   spec.add_development_dependency "simplecov", "~> 0.9"
   spec.add_development_dependency "cucumber", "~> 1.3"
+  spec.add_development_dependency "gherkin", "~>2.12"
   spec.add_development_dependency "rspec", "~> 3.0"
 end
 

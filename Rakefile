@@ -12,6 +12,14 @@ task :prepare do
   LockJar.install('Jarfile.lock', local_repo: File.expand_path("../jars", __FILE__))
 end
 
+begin
+  Bundler.setup(:default, :development, :test)
+rescue Bundler::BundlerError => e
+  $stderr.puts e.message
+  $stderr.puts "Run `jruby -S bundle install` to install missing gems"
+  exit e.status_code
+end
+
 require 'rake'
 require 'cucumber/rake/task'
 

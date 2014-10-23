@@ -13,7 +13,6 @@ task :prepare do
 end
 
 require 'rake'
-require 'cucumber'
 require 'cucumber/rake/task'
 
 Cucumber::Rake::Task.new(:features)

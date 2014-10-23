@@ -1,8 +1,12 @@
 # coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require 'ruby-band/version'
 
 Gem::Specification.new do |spec|
   spec.name = "ruby-band"
-  spec.version = "0.1.13"
+  spec.version = RubyBand::VERSION
 
   spec.require_paths    = ["lib"]
   spec.authors          = ["arrigonialberto86"]

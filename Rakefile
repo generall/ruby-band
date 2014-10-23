@@ -35,18 +35,11 @@ task :test => [] do
   Rake::Task[:features].invoke
 end
 
-#require 'rcov/rcovtask'
-#Rcov::RcovTask.new do |test|
-#  test.libs << 'test'
-#  test.pattern = 'test/**/test_*.rb'
-#  test.verbose = true
-#  test.rcov_opts << '--exclude "gems/*"'
-#end
-
 require 'rdoc/task'
+require 'ruby-band/version'
 
 Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
+  version = RubyBand::VERSION
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "ruby-band #{version}"

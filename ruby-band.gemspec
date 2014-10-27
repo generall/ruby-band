@@ -19,12 +19,11 @@ Gem::Specification.new do |spec|
   spec.files            = `git ls-files -z`.split("\x0") + Dir['jars/**/*']
 
   spec.add_runtime_dependency "atomic", "~> 1.1"
-  spec.add_runtime_dependency "activesupport", "~> 4.1"
+  spec.add_runtime_dependency "activesupport", ">= 3.2.13"
   spec.add_runtime_dependency "bio", "~> 1.4"
   spec.add_runtime_dependency "ruport", "~> 1.6"
   spec.add_runtime_dependency "lock_jar", "~> 0.10"
 
-  spec.add_development_dependency "git", "~> 1.2"
   spec.add_development_dependency "rdoc", "~> 4.1"
   spec.add_development_dependency "rake", "~> 10.3"
 

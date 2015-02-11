@@ -1,4 +1,4 @@
-# coding: utf-8
+# encoding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "rdoc", "~> 4.1"
   spec.add_development_dependency "rake", "~> 10.3"
-
+  spec.add_development_dependency "bundler"
   spec.add_development_dependency "shoulda", "~> 3.5"
   spec.add_development_dependency "test-unit", "~> 2.5"
   spec.add_development_dependency "simplecov", "~> 0.9"
@@ -34,4 +34,3 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "gherkin", "~>2.12"
   spec.add_development_dependency "rspec", "~> 3.0"
 end
-

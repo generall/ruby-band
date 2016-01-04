@@ -1,11 +1,40 @@
-org.sonatype.aether:aether-api:jar:1.1
-nz.ac.waikato.cms.weka:weka-stable:jar:3.6.10
-net.sf.squirrel-sql.thirdparty-non-maven:java-cup:jar:0.11a
-org.apache.commons:commons-math3:jar:3.0
-junit:junit:jar:3.8.1
-mysql:mysql-connector-java:jar:5.1.6
-postgresql:postgresql:jar:9.1-901.jdbc4
-org.xerial:sqlite-jdbc:jar:3.7.2
-hsqldb:hsqldb:jar:1.8.0.7
-idb:idb:jar:3.26
-mckoi:mckoi:jar:0.93
+---
+version: 0.10.0
+groups:
+  default:
+    dependencies:
+    - hsqldb:hsqldb:jar:1.8.0.7
+    - idb:idb:jar:3.26
+    - junit:junit:jar:3.8.1
+    - mckoi:mckoi:jar:0.93
+    - mysql:mysql-connector-java:jar:5.1.6
+    - net.sf.squirrel-sql.thirdparty-non-maven:java-cup:jar:0.11a
+    - nz.ac.waikato.cms.weka:weka-dev:jar:3.7.10
+    - org.apache.commons:commons-math3:jar:3.0
+    - org.pentaho.pentaho-commons:pentaho-package-manager:jar:1.0.8
+    - org.sonatype.aether:aether-api:jar:1.1
+    - org.xerial:sqlite-jdbc:jar:3.7.2
+    - postgresql:postgresql:jar:9.1-901.jdbc4
+    artifacts:
+    - jar:org.sonatype.aether:aether-api:jar:1.1:
+        transitive: {}
+    - jar:nz.ac.waikato.cms.weka:weka-dev:jar:3.7.10:
+        transitive:
+          org.pentaho.pentaho-commons:pentaho-package-manager:jar:1.0.8: {}
+          net.sf.squirrel-sql.thirdparty-non-maven:java-cup:jar:0.11a: {}
+    - jar:org.apache.commons:commons-math3:jar:3.0:
+        transitive: {}
+    - jar:junit:junit:jar:3.8.1:
+        transitive: {}
+    - jar:mysql:mysql-connector-java:jar:5.1.6:
+        transitive: {}
+    - jar:postgresql:postgresql:jar:9.1-901.jdbc4:
+        transitive: {}
+    - jar:org.xerial:sqlite-jdbc:jar:3.7.2:
+        transitive: {}
+    - jar:hsqldb:hsqldb:jar:1.8.0.7:
+        transitive: {}
+    - jar:idb:idb:jar:3.26:
+        transitive: {}
+    - jar:mckoi:mckoi:jar:0.93:
+        transitive: {}

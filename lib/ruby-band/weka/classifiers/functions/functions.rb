@@ -1,27 +1,23 @@
-$:.unshift File.dirname(__FILE__)
+require 'ruby-band/weka/classifiers/class_builder'
 
-require_relative '../class_builder'
-
-#
-# The Weka::Classifier::Functions module contains classifiers from the 'weka.classifiers.functions' package
+# The Weka::Classifiers::Functions module contains classifiers from the 'weka.classifiers.functions' package
 # New weka classes can be defined by adding them to the build_classes method.
-#
 module Weka
-	module Classifier
-		module Functions
-      include ClassBuilder::Classifiers
+  module Classifiers
+    module Functions
+      include ClassBuilder
 
-      build_classes :LinearRegression,
-                    :PLSClassifier,
-                    :RBFNetwork,
-                    :GaussianProcesses,
-                    :LeastMedSq,
-                    :LibSVM,
+      build_classes :GaussianProcesses,
+                    :LinearRegression,
+                    :Logistic,
+                    :MultilayerPerceptron,
+                    :SGD,
+                    :SGDText,
+                    :SimpleLinearRegression,
+                    :SimpleLogistic,
                     :SMO,
                     :SMOreg,
-                    :SPegasos,
-                    :VotedPerceptron,
-                    :Winnow
+                    :VotedPerceptron
     end
   end
 end

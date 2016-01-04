@@ -1,21 +1,18 @@
-$:.unshift File.dirname(__FILE__)
+require 'ruby-band/weka/classifiers/class_builder'
 
-require_relative '../class_builder'
-
-#
-# The Weka::Classifier::Bayes module contains classifiers from the 'weka.classifiers.bayes' package
+# The Weka::Classifiers::Bayes module contains classifiers from the 'weka.classifiers.bayes' package
 # New weka classes can be defined by adding them to the build_classes method.
-#
 module Weka
-  module Classifier
+  module Classifiers
     module Bayes
-      include ClassBuilder::Classifiers
+      include ClassBuilder
 
-      build_classes :NaiveBayes,
-                    :BayesianLogisticRegression,
-                    :AODE,
-                    :ComplementNaiveBayes,
-                    :WAODE
+      build_classes :BayesNet,
+                    :NaiveBayes,
+                    :NaiveBayesMultinomial,
+                    :NaiveBayesMultinomialText,
+                    :NaiveBayesMultinomialUpdateable,
+                    :NaiveBayesUpdateable
     end
   end
 end

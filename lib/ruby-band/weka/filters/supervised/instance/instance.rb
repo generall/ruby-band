@@ -1,17 +1,16 @@
-$:.unshift(File.expand_path(File.join(File.dirname(__FILE__),"../")))
-require 'java'
-require 'supervised_utils'
+require 'ruby-band/weka/filters/supervised/class_builder'
 
 module Weka
-  module Filter
+  module Filters
   	module Supervised
-  		module Instance
-  			java_import "weka.filters.supervised.instance.Resample"
+      module Instance
+        include ClassBuilder
 
-        class Resample
-          include Supervised_Util
-        end
-  		end
-  	end
+        build_classes :Resample,
+                      :SpreadSubsample,
+                      :StratifiedRemoveFolds
+
+      end
+    end
   end
 end

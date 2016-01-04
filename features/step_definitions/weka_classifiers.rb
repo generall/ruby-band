@@ -1,5 +1,5 @@
-Given(/^the Weka "(.*?)" classifier$/) do |arg1|
-  @classifier = "Weka::Classifier::#{arg1}".constantize.new
+Given(/^the Weka "(.*?)" classifier$/) do |class_name|
+  @classifier = "Weka::Classifiers::#{class_name}".constantize.new
 end
 
 Then(/^I want to print a "(.*?)"$/) do |arg1|
@@ -11,7 +11,7 @@ Then(/^I want to print an options list$/) do
 end
 
 Given(/^the unsupervised Weka classifier "(.*?)"$/) do |class_name|
-  class_name = "Weka::Classifier::#{class_name}::Base".constantize
+  class_name = "Weka::Classifiers::#{class_name}::Base".constantize
   @classifier_class = Class.new class_name
 end
 
@@ -60,14 +60,22 @@ end
 
 Then(/^I want to cross validate the classifier$/) do
   @evaluation = @classifier_instance.cross_validate(2)
-  @evaluation.should be_a Weka::Classifier::Evaluation
+  @evaluation.should be_a Weka::Classifiers::Evaluation
 end
 
-And(/^I want to get the (.*?) of the evaluation\s?(.*?)$/) do |info, with_class_index|
+Then(/^I want to get the (.*?) of the evaluation\s?(.*?)$/) do |info, with_class_index|
   method_name = info.downcase.strip.gsub(/[ -]/, '_').to_sym
   @evaluation.should respond_to method_name
 
   information = @evaluation.send(method_name) if with_class_index.blank?
   information = @evaluation.send(method_name, @class_index.to_i) unless with_class_index.blank?
   information.should_not be_blank
+end
+
+Then(/^I want to get the performance curves of the classifier$/) do
+  threshold_curve = Weka::Classifiers::Evaluation::ThresholdCurve.new
+  instances = threshold_curve.curve(@evaluation.predictions, 0) # 'yes' class
+
+  puts "Performance values:", instances
+  instances.should be_a Core::Type::Instances
 end
